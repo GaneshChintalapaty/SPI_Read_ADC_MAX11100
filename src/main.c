@@ -55,7 +55,7 @@ int main ( void )
         readADCStatus = QSPI_Read(&readADC, readADCLength);
         if(readADCStatus == true)
         {
-            ADC = readADC * ADCReferenceVoltage;
+            ADC = (readADC * ADCReferenceVoltage)/65536;
             printf("ADC Value: %.6f V\n", ADC);
         }
         else
